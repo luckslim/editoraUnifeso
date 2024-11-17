@@ -15,10 +15,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-        .header-content h1{
-            font-family: 'Roboto', sans-serif;
-            font-weight: 100;
-        }
         /* Fontes */
         body {
             font-family: 'Roboto', sans-serif;
@@ -150,9 +146,16 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
+        .modal-content .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         .modal-content h2 {
             font-size: 1.5rem;
             margin-bottom: 20px;
+            flex-grow: 1;
         }
 
         .modal-content label {
@@ -187,10 +190,16 @@
             font-size: 1.2rem;
             transition: background-color 0.3s;
         }
-
-        .modal-content button:hover {
-            background-color: #0da57f;
+        /* Botão Sair */
+        .modal-content .exit-button {
+            background-color: transparent;
+            border: none;
+            font-size: 1.5rem;
+            color: #dc3545;
+            cursor: pointer;
         }
+
+        
 
         /* Responsividade */
         @media (max-width: 768px) {
@@ -240,7 +249,10 @@
     <!-- Modal -->
     <div class="modal" id="modal">
         <div class="modal-content">
-            <h2>Adicionar Notícia</h2>
+            <div class="modal-header">
+                <h2>Adicionar Notícia</h2>
+                <button class="exit-button" onclick="hideModal()">×</button>
+            </div>
 
             <label for="newsImageType">Escolha o tipo de imagem:</label>
             <select id="newsImageType" onchange="toggleImageInput()">
