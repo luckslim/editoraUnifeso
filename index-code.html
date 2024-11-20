@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação UNIFESO</title>
+    <style>
+        /* Resetando alguns estilos padrões */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Fontes */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Estilo do Header */
+        header {
+            background-color: #006B64;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .header-image {
+            width: 100px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Layout Wrapper */
+        .wrapper {
+            display: flex;
+            padding: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .sidebar {
+            background-color: #fff;
+            width: 250px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+        }
+        .sidebar .email{
+            margin-top: 10px;
+        }
+
+        .sidebar h2 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .feed {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .news-item {
+            background-color: white;
+            width: calc(33% - 20px);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .news-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .news-item h3 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .news-item p {
+            color: #555;
+        }
+
+        .add-news {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+            
+        }
+
+        .add-news:hover {
+            background-color: #218838;
+        }
+
+        /* Estilo do Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-content h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .modal-content label {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .modal-content input,
+        .modal-content textarea,
+        .modal-content select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+        }
+
+        .modal-content textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        .modal-content button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+
+        .modal-content button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .wrapper {
+                flex-direction: column;
+            }
+
+            .news-item {
+                width: 100%;
+            }
+
+            .sidebar {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .modal-content {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <h1>UNIFESO</h1>
+        </div>
+        <img src="img/img.png" alt="Imagem Verde" class="header-image">
+    </header>
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>Bem-vindo, Usuário!</h2>
+            <p>Nome: João Silva</p>
+            <p class="email">Email: joao.silva@email.com</p>
+            <button class="add-news" onclick="showModal()">Adicionar Notícia</button>
+        </div>
+        <div class="feed" id="feed">
+            <div class="news-item">
+                <img src="img/noticia1.jpg" alt="Notícia 1">
+                <h3>Título da Notícia 1</h3>
+                <p>Descrição breve da notícia 1.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2>Adicionar Notícia</h2>
+
+            <label for="newsImageType">Escolha o tipo de imagem:</label>
+            <select id="newsImageType" onchange="toggleImageInput()">
+                <option value="url">URL</option>
+                <option value="file">Arquivo</option>
+            </select>
+
+            <div id="urlInput">
+                <label for="newsImageUrl">URL da Imagem</label>
+                <input type="text" id="newsImageUrl" placeholder="Digite a URL da imagem">
+            </div>
+
+            <div id="fileInput" style="display: none;">
+                <label for="newsImageFile">Carregar Imagem</label>
+                <input type="file" id="newsImageFile" accept="image/*">
+            </div>
+
+            <label for="newsTitle">Título</label>
+            <input type="text" id="newsTitle" placeholder="Digite o título">
+            <label for="newsDescription">Descrição</label>
+            <textarea id="newsDescription" rows="4" placeholder="Digite a descrição"></textarea>
+            <button onclick="addNews()">Salvar Notícia</button>
+        </div>
+    </div>
+
+    <script>
+        // Exibir o modal
+        function showModal() {
+            const modal = document.getElementById("modal");
+            modal.classList.add("active");
+        }
+
+        // Ocultar o modal
+        function hideModal() {
+            const modal = document.getElementById("modal");
+            modal.classList.remove("active");
+        }
+
+        // Alternar entre o input de URL e de arquivo
+        function toggleImageInput() {
+            const imageType = document.getElementById("newsImageType").value;
+            const urlInput = document.getElementById("urlInput");
+            const fileInput = document.getElementById("fileInput");
+
+            if (imageType === "url") {
+                urlInput.style.display = "block";
+                fileInput.style.display = "none";
+            } else if (imageType === "file") {
+                urlInput.style.display = "none";
+                fileInput.style.display = "block";
+            }
+        }
+
+        // Adicionar a notícia com a imagem
+        function addNews() {
+            const feed = document.getElementById("feed");
+            const imageType = document.getElementById("newsImageType").value;
+
+            let imageSrc = "";
+
+            if (imageType === "url") {
+                imageSrc = document.getElementById("newsImageUrl").value;
+            } else if (imageType === "file") {
+                const fileInput = document.getElementById("newsImageFile").files[0];
+                if (fileInput) {
+                    imageSrc = URL.createObjectURL(fileInput);
+                }
+            }
+
+            if (!imageSrc) {
+                alert("Por favor, forneça uma imagem válida.");
+                return;
+            }
+
+            const title = document.getElementById("newsTitle").value;
+            const description = document.getElementById("newsDescription").value;
+
+            const newsItem = document.createElement("div");
+            newsItem.classList.add("news-item");
+
+            const img = document.createElement("img");
+            img.src = imageSrc;
+            img.alt = title;
+            newsItem.appendChild(img);
+
+            const h3 = document.createElement("h3");
+            h3.textContent = title;
+            newsItem.appendChild(h3);
+
+            const p = document.createElement("p");
+            p.textContent = description;
+            newsItem.appendChild(p);
+
+            feed.appendChild(newsItem);
+
+            // Limpar o modal e fechá-lo
+            hideModal();
+        }
+    </script>
+</body>
+
+</html>
