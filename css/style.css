@@ -1,0 +1,230 @@
+:root {
+    --emerald-50: #ecfdf5;
+    --emerald-100: #d1fae5;
+    --emerald-200: #a7f3d0;
+    --emerald-500: #10b981;
+    --blue-600: #2563eb;
+    --gray-300: #d4d4d4;
+    --gray-900: #171717;
+    --gray-700: #262626;
+    --emerald-800: #065f46;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--gray-900);
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+header {
+    background-color: var(--emerald-800);
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1{
+    color: var(--emerald-50);
+    margin: 10px;
+}
+
+
+.div-login {
+    text-align: center;
+    background-color: var(--gray-700);
+    color: var(--gray-300);
+    margin: auto;
+    margin-top: 100px;
+    max-width: 500px;
+    display: flex;
+    padding: 10px;
+    border-radius: 8px;
+    height: auto;
+}
+
+.div-login .login {
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
+
+.div-login .login input {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: var(--gray-300);
+    width: 100%;
+    height: 50px;
+    border-color:var(--gray-300);
+    background: transparent;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.div-login .login input:hover {
+    border: 0.5px solid var(--emerald-500);
+}
+
+.div-login .button {
+    background-color: var(--emerald-800);
+    color: var(--emerald-50);
+    text-decoration: none;
+    padding: 10px 210px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.div-login .button:hover {
+    background: var(--emerald-500);
+}
+
+.div-login img {
+    width: 200px;
+    margin: 10px;
+}
+
+.login p {
+    color: var(--gray-300);
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.login p a {
+    text-decoration: none;
+    color: var(--blue-600);
+}
+
+.login p a:hover {
+    color: var(--emerald-200);
+}
+
+.div-news {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 100px;
+    gap: 1rem;
+}
+
+.div-news .sidebar {
+    text-align: center;
+    background-color: var(--gray-700);
+    color: var(--gray-300);
+    width: 700px;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 350px; 
+}
+.div-news .sidebar img{
+    width: 100%;
+    object-fit: cover;
+    height: 100px;
+}
+.div-news .avatar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.div-news .avatar img{
+    margin-top: -25px;
+    margin-bottom: 20px;
+    width: 180px;
+    object-fit: contain;
+}
+.div-news .sidebar a{
+    background-color: var(--emerald-800);
+    color: var(--emerald-50);
+    padding: 1rem;
+    border-radius: 8px;
+    height: 2rem;
+    text-decoration: none;
+    
+}
+.div-news .sidebar a:hover{
+    background-color: var(--emerald-500);
+}
+#name{
+    color: var(--emerald-500);
+    font-weight: 600;
+}
+.div-news .feed{
+    display: flex;
+    flex-direction: column;
+}
+.div-news .feed .box-feed{
+    background-color: var(--gray-700);
+    color: var(--emerald-50);
+    border-radius: 8px;
+    align-items: start;
+    justify-content: left;
+    margin-bottom: 1rem;
+}
+.header-post{
+    margin: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.header-post .feed-user img{
+    width: 100px;
+    border-radius: 8px;
+}
+.box-post{
+    margin: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+.box-post .box-text p{
+    width: 100%;
+    color: var(--gray-300);
+    border-bottom: 5px solid var(--gray-900);
+
+}
+.box-post .box-img{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+.box-post .box-img img{
+    box-sizing: border-box;
+    width: 50%;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .div-news {
+        display: grid;
+        grid-template-columns: 1fr; /* Sidebar e feed empilhados */
+        gap: 1rem; /* Espaçamento entre os elementos */
+    }
+
+    .div-news .sidebar {
+        width: 100%; /* Sidebar ocupa toda a largura */
+    }
+
+    .div-news .feed {
+        width: 100%; /* Feed ocupa toda a largura */
+    }
+}
