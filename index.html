@@ -19,11 +19,10 @@
     <div class="div-login">
         <div class="login">
             <img src="img/img.png" alt="">
-            <form action="">
-                <input type="text" placeholder="UserName">
-                <input type="password" placeholder="Senha">
-                <a class="button" href="page.html">Entrar</a>
-                <!-- <Button type="hidden">Entrar</Button> -->
+            <form action="" id="loginForm">
+                <input type="text" id="usuario" placeholder="UserName">
+                <input type="password" id="senha" placeholder="Senha">
+                <Button type="submit">Entrar</Button>
                 <p>Ainda não é inscrito?<a href="">Cadastre-se</a></p>
             </form>
         </div>
@@ -31,3 +30,19 @@
 </body>
 
 </html>
+
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const username = document.getElementById('usuario').value;
+      const password = document.getElementById('senha').value;
+      if (username === 'admin' && password === '123') {
+        alert('Bem vindo Admin!');
+        window.location.href = 'page.html'; 
+      } else {
+        alert('Bem Vindo!');
+        window.location.href = 'feed-user.html'; 
+      }
+    });
+  </script>

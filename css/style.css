@@ -78,7 +78,7 @@ header h1{
     border: 0.5px solid var(--emerald-500);
 }
 
-.div-login .button {
+.div-login button {
     background-color: var(--emerald-800);
     color: var(--emerald-50);
     text-decoration: none;
@@ -89,7 +89,7 @@ header h1{
     cursor: pointer;
 }
 
-.div-login .button:hover {
+.div-login button:hover {
     background: var(--emerald-500);
 }
 
@@ -153,7 +153,7 @@ header h1{
 .div-news .sidebar a{
     background-color: var(--emerald-800);
     color: var(--emerald-50);
-    padding: 1rem;
+    padding: 1rem 3rem;
     border-radius: 8px;
     height: 2rem;
     text-decoration: none;
@@ -188,6 +188,9 @@ header h1{
 .header-post .feed-user img{
     width: 100px;
     border-radius: 8px;
+}
+.header-post span{
+    color:var(--gray-300);
 }
 .box-post{
     margin: 20px;
