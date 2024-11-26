@@ -131,6 +131,7 @@ header h1{
     border-radius: 8px;
     overflow: hidden;
     height: 350px; 
+    margin-top: 12px;
 }
 .div-news .sidebar img{
     width: 100%;
@@ -215,7 +216,49 @@ header h1{
     width: 50%;
     margin-top: 10px;
 }
+.modal-content{
+    background-color: var(--gray-900);
+    color: var(--gray-300);
+    display: flex;
+    flex-direction: column;
+}
+.modal-content input{
+    width: 100%;
+    background: var(--gray-700);
+    color: var(--gray-300);
+    border-radius: 8px;
+    border:none;
+    padding: 1rem;
+    margin: auto;
+    margin-bottom: 1rem;
 
+}
+.modal-content textarea{
+    text-align: justify;
+    color: var(--gray-300);
+    width: 100%;
+    background: var(--gray-700);
+    border-radius: 8px;
+    border: none;
+    height: 160px;
+    margin: auto;
+    margin-bottom: 8px;
+}
+.modal-content textarea::placeholder{
+    text-align: center;
+    padding-top: 10px;
+}
+.modal-footer .btn-primary{
+    background: var(--emerald-800);
+    border: none;
+    padding: 0.875rem;
+}
+.modal-footer .btn-primary:hover{
+   background: var(--emerald-500);
+}
+.modal-footer .btn-secondary{
+    padding: 0.800rem;
+}
 @media (max-width: 768px) {
     .div-news {
         display: grid;
