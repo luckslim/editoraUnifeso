@@ -87,7 +87,7 @@ header h1{
     border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
-    width: 100%;
+    width: 60%;
 }
 
 .div-login button:hover {
