@@ -274,4 +274,10 @@ header h1{
     .div-news .feed {
         width: 100%; /* Feed ocupa toda a largura */
     }
+    .box-img .imgs{
+        display: none;
+    }
+    .box-post .box-img img{
+        width: 100%;
+    }
 }
