@@ -87,6 +87,7 @@ header h1{
     border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
+    width: 100%;
 }
 
 .div-login button:hover {
@@ -154,11 +155,9 @@ header h1{
 .div-news .sidebar a{
     background-color: var(--emerald-800);
     color: var(--emerald-50);
-    padding: 1rem 3rem;
-    border-radius: 8px;
-    height: 2rem;
-    text-decoration: none;
-    
+    padding: 1rem 8rem;
+    border-radius: 10px;
+    text-decoration: none;    
 }
 .div-news .sidebar a:hover{
     background-color: var(--emerald-500);
@@ -170,8 +169,10 @@ header h1{
 .div-news .feed{
     display: flex;
     flex-direction: column;
+    width: 95%;
 }
 .div-news .feed .box-feed{
+
     background-color: var(--gray-700);
     color: var(--emerald-50);
     border-radius: 8px;
